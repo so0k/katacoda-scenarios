@@ -34,6 +34,9 @@
       "credits": "https://concoursetutorial.com/"
     }
   },
+  "files": [
+    "~/tutorial/task_hello_world.yml"
+  ],
   "environment": {
     "uilayout": "editor-terminal",
     "uisettings": "yaml"
