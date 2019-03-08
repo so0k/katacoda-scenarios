@@ -14,7 +14,7 @@ To pull in the Git repository into the pipeline, we edit `pipeline.yml`{{open}} 
 - name: resource-git-sample
   type: git
   source:
-    uri: http://git-server:9080/git-sample.git
+    uri: http://git-server:8080/git-sample.git
     branch: master
 </pre>
 
@@ -33,7 +33,7 @@ We update our pipeline as follows
 - name: resource-git-sample
   type: git
   source:
-    uri: http://git-server:9080/git-sample.git
+    uri: http://git-server:8080/git-sample.git
     branch: master
 
 jobs:
@@ -85,7 +85,7 @@ resources:
 - name: resource-git-sample
   type: git
   source:
-    uri: http://git-server:9080/git-sample.git
+    uri: http://git-server:8080/git-sample.git
     branch: master
 
 jobs:
