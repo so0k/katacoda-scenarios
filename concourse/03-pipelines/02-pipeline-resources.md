@@ -14,7 +14,7 @@ To pull in the Git repository into the pipeline, we edit `pipeline.yml`{{open}} 
 - name: resource-git-sample
   type: git
   source:
-    uri: http://git:9080/git-sample.git
+    uri: http://git-server:9080/git-sample.git
     branch: master
 </pre>
 
@@ -33,7 +33,7 @@ We update our pipeline as follows
 - name: resource-git-sample
   type: git
   source:
-    uri: http://git:9080/git-sample.git
+    uri: http://git-server:9080/git-sample.git
     branch: master
 
 jobs:
@@ -66,6 +66,12 @@ apply configuration? [yN]:
 
 Press `y`
 
+Test the pipeline by triggering the job and watching the output
+
+```
+fly -t tutorial tj -j hello-world/job-hello-world -w
+```{{execute}}
+
 Publish the output as follows:
 
 <pre class="file" data-filename="pipeline.yml" data-target="replace">
@@ -73,7 +79,7 @@ resources:
 - name: resource-git-sample
   type: git
   source:
-    uri: http://git:9080/git-sample.git
+    uri: http://git-server:9080/git-sample.git
     branch: master
 
 jobs:
