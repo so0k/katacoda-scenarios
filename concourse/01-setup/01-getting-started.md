@@ -1,12 +1,18 @@
 
-To run Concourse we need postgres and some basic configuration, we can launch both using the `docker-compose` file provided and docker-compose command.
+To run Concourse we need postgres and some basic configuration, we can launch both using the `docker-compose` file provided and docker-compose command below.
 
 Refer to the Docker courses to learn more about Docker.
 
-Launch concourse as follows:
+For the purpose of this scenario, we need to provide the concourse external URL
 
 ```
-docker-compose up -e CONCOURSE_EXTERNAL_URL=https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com -d
+echo "CONCOURSE_EXTERNAL_URL=https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com" >> .concourse-env
+```{{execute}}
+
+Then stand up both Postgres and Concourse in quickstart mode with:
+
+```
+docker-compose up -d
 ```{{execute}}
 
 You may review the configuration used here:
@@ -15,7 +21,7 @@ You may review the configuration used here:
 cat docker-compose.yml
 ```{{execute}}
 
-After a while, you should see the concourse dashboard in the upper frame.
+After a while, you should see the concourse dashboard appear in the upper frame.
 
 You may log in with:
 

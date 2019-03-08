@@ -22,7 +22,8 @@
     ],
     "assets": {
         "client": [
-            {"file": "docker-compose.yml", "target": "~/tutorial"}
+            {"file": "docker-compose.yml", "target": "~/tutorial"},
+            {"file": "concourse.env", "target": "~/tutorial"}
         ]
     },
     "finish": {
