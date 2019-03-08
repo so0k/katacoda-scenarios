@@ -4,17 +4,17 @@
   "icon": "fa-katacoda",
   "courses": [
     {
-      "course_id": "concourse-course-setup",
+      "course_id": "01-setup",
       "title": "Client and Course Setup",
       "description": "Understand the set up of the course and concourse clients"
     },
     {
-      "course_id": "concourse-tasks",
+      "course_id": "02-tasks",
       "title": "Understanding Tasks",
       "description": "Understanding Tasks, Task inputs and Task Scripts"
     },
     {
-      "course_id": "concourse-pipeline-basics",
+      "course_id": "03-pipeline-basics",
       "title": "Understanding Pipeline basics",
       "description": "Creating basic pipelines and work with Pipeline resources"
     }
