@@ -35,7 +35,7 @@
     }
   },
   "files": [
-    "~/tutorial/task_hello_world.yml"
+    "task_hello_world.yml"
   ],
   "environment": {
     "uilayout": "editor-terminal",
