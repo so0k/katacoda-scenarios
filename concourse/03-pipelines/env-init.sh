@@ -32,7 +32,7 @@ echo "Configuring concourse client"
 fly -t tutorial login -c http://docker:8080 -u admin -p admin
 
 # provision sample git remotes on docker host
-ssh root@host01 "mkdir /repositories && git clone --bare https://github.com/so0k/concourse-git-sample.git /repositories/git-sample.git" </dev/null
+ssh root@host01 "git clone --bare https://github.com/so0k/concourse-git-sample.git /repositories/git-sample.git" </dev/null
 
 # clone sample git repositories to client
 git clone http://docker:9080/git-sample.git ~/tutorial/git-sample
