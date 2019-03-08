@@ -22,8 +22,8 @@
       }
     ],
     "assets": {
-        "host01": [
-            {"file": "docker-compose.yml", "target": "~/"}
+        "client": [
+            {"file": "docker-compose.yml", "target": "~/tutorial"}
         ]
     },
     "finish": {

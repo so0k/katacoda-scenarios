@@ -15,18 +15,18 @@ Download the command line client:
 
 ```
 curl -Lo fly http://localhost:8080/api/v1/cli?arch=amd64&platform=linux
-```{{execute terminal}}
+```{{execute}}
 
 Make it executable
 
 ```
 chmod +x fly
-```{{execute terminal}}
+```{{execute}}
 
 And put it on the PATH
 
 ```
 mv fly ~/usr/local/bin/
-```{{execute terminal}}
+```{{execute}}
 
 Next we will configure our command line client.

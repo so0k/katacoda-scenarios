@@ -25,9 +25,9 @@
       }
     ],
     "assets": {
-        "host01": [
-            {"file": "docker-compose.yml", "target": "~/"},
-            {"file": "task_hello_world.yml", "target": "~/hello-world/"}
+        "client": [
+            {"file": "docker-compose.yml", "target": "~/tutorial/"},
+            {"file": "task_hello_world.yml", "target": "~/tutorial/hello-world/"}
         ]
     },
     "finish": {
