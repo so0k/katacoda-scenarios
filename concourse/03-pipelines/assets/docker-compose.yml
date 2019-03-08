@@ -1,6 +1,12 @@
 version: '3'
 
 services:
+  git:
+    image: quay.io/swo0k/git-http-backend:v0.0.1
+    ports: ["9080:8080"]
+    volumes:
+    - /repositories/:/repositories/
+
   concourse-db:
     image: postgres
     environment:
@@ -10,7 +16,7 @@ services:
     - PGDATA=/database
 
   concourse:
-    image: concourse/concourse
+    image: concourse/concourse:5.0.0
     command: quickstart
     privileged: true
     depends_on: [concourse-db]
@@ -23,5 +29,3 @@ services:
     - CONCOURSE_EXTERNAL_URL=http://docker:8080
     - CONCOURSE_ADD_LOCAL_USER=admin:admin
     - CONCOURSE_MAIN_TEAM_LOCAL_USER=admin
-    volumes:
-    - /mock/remote/git-sample:/mock/remote/git-sample

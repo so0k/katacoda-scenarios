@@ -1,9 +1,9 @@
 echo "Standing up concourse playground"
 
 # provision mock git remote
-mkdir -p /mock/remote/sample
-git clone --bare https://github.com/so0k/concourse-git-sample.git /mock/remote/git-sample
-git clone /mock/remote/git-sample ~/tutorial/git-sample
+mkdir -p /repositories/
+git clone --bare https://github.com/so0k/concourse-git-sample.git /repositories/git-sample.git
+git clone /repositories/git-sample.git ~/tutorial/git-sample
 
 # bootstrap concourse workers with access to mock remote repository
 curl --connect-timeout 5 \
