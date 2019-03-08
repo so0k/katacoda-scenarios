@@ -17,12 +17,12 @@ The `image_resource` configuration field only requires `type` and `source` field
 <pre class="file" data-filename="task_ubuntu_ls.yml" data-target="append">
 image_resource:
   type: docker-image
-  source:
+  source:</pre>
+
+The `docker-image` resource type only requires the `repository` to be specified, the `tag` is optional and is `latest` by default. A future scenario will look into building and using your own Docker images. For this exercise we will use the `ubuntu` docker image readily available from the [Docker Hub](https://hub.docker.com/_/ubuntu):
+
+<pre class="file" data-filename="task_ubuntu_ls.yml" data-target="append">    repository: ubuntu
 </pre>
-
-The `docker-image` resource type only the `repository` is required, the `tag` is optional and is `latest` by default. A future scenario will look into building and using your own Docker images. For this exercise we will use the `ubuntu` docker image readily available from the [Docker Hub](https://hub.docker.com/_/ubuntu):
-
-<pre class="file" data-filename="task_ubuntu_ls.yml" data-target="append">    repository: ubuntu</pre>
 
 Finally we define the command to execute in the container using the `run` configuration. Only `path` is required (commonly a script or command) a string array of arguments is optionally provided through `args`.
 
