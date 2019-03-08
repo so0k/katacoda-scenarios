@@ -22,10 +22,12 @@ curl --connect-timeout 5 \
 
 # provision simple input directory for step 3
 mkdir -p task-scripts
-cat > task-scripts/task_show_uname.sh <<<"
-#!/bin/sh
-
-uname -a"
+curl --connect-timeout 5 \
+  --max-time 10 \
+  --retry 5 \
+  --retry-delay 0 \
+  --retry-max-time 40 \
+  -Lo task-scripts/task_show_uname.sh https://raw.githubusercontent.com/so0k/katacoda-scenarios/master/concourse/02-tasks/assets/task_show_uname.sh
 
 chmod +x task-scripts/task_show_uname.sh
 
