@@ -23,7 +23,7 @@ docker-compose up -d
 
 Wait for compose to pull the docker images and stand up the database as well as the concourse UI / scheduler and workers.
 
-```
+```shell
 ...
 Status: Downloaded newer image for postgres:latest
 Pulling concourse (concourse/concourse:5.0.0)...
@@ -34,11 +34,11 @@ b4624b3efe06: Extracting [==================================================>]  
 d42beb8ded59: Download complete
 f51b97ce0afa: Download complete
 b2b35a4bcc62: Downloading [==========>                                        ]  115.5MB/532.4MB
-```{{terminal}}
+```
 
-After a while (may take up to 5 minutes), you should see the concourse dashboard appear in the upper frame.
+After the compose process finished, it may still take a minute for the concourse dashboard to appear in the upper frame.
 
-In the mean time let's download the command line client:
+If the terminal is available, let's download the command line client while waiting for the UI:
 
 ```
 curl -Lo fly.tar.gz https://github.com/concourse/concourse/releases/download/v5.0.0/fly-5.0.0-linux-amd64.tgz
