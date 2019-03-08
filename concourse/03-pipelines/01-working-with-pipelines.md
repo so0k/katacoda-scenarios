@@ -1,10 +1,10 @@
 Pipelines are configured entirely via the fly CLI. There is no GUI.
 
-Let's see how to upload a pipeline, run it and watch its executing all through the command line.
+Let's see how to upload a pipeline, run it and watch its execution all through the command line.
 
 The provided `pipeline.yml`{{open}} (click to open) configuration defines a basic pipepline using the hello world task as covered in the scenario covering tasks.
 
-This first pipeline is unimpressive - a single job `job-hello-world` with no inputs from the left and no outputs to its right, no jobs feeding into it, nor jobs feeding from it and no triggers to kick of the job. It is the most basic pipeline.
+This first pipeline is unimpressive - a single job `job-hello-world` with no inputs from the left and no outputs to its right, no jobs feeding into it, nor jobs feeding from it and no triggers to kick off the job. It is the most basic pipeline.
 
 To submit a pipeline configuration to Concourse from a file on your local disk you use the `set-pipeline` (alias `sp`) command.
 
