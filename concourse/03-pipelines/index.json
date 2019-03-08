@@ -14,10 +14,6 @@
       {
         "title": "Working with Pipelines",
         "text": "01-working-with-pipelines.md"
-      },
-      {
-        "title": "Configuring Tasks",
-        "text": "02-configuring-tasks.md"
       }
     ],
     "finish": {
