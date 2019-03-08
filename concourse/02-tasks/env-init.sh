@@ -18,4 +18,4 @@ while ! curl -sI http://docker:8080 >/dev/null 2>&1; do echo "Waiting for concou
 echo "Configuring concourse client"
 fly -t tutorial login -c http://docker:8080 -u admin -p admin
 
-echo "\e[1m\e[32mTerminal ready to use!\e[0m"
+echo "Terminal ready to use!"
