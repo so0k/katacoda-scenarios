@@ -8,7 +8,7 @@ Open the file: `task-scripts/task_show_uname.yml`{{open}}
 
 And add the following:
 
-<pre class="file" data-filename="task_ubuntu_ls.yml" data-target="replace">---
+<pre class="file" data-filename="task_show_uname.yml" data-target="replace">---
 platform: linux
 
 image_resource:
@@ -22,13 +22,13 @@ inputs:
 
 Add the following `run:` configuration:
 
-<pre class="file" data-filename="task_ubuntu_ls.yml" data-target="replace">
+<pre class="file" data-filename="task_show_uname.yml" data-target="replace">
 run:
   path: ./task-scripts/task_show_uname.sh
 </pre>
 
 ```
-cd tasks-scripts
+cd task-scripts
 fly -t tutorial e -c task_show_uname.yml
 ```{{execute}}
 

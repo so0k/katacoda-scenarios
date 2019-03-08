@@ -11,12 +11,13 @@ curl -Lo task_hello_world.yml https://raw.githubusercontent.com/so0k/katacoda-sc
 
 # provision simple input directory for step 3
 mkdir -p task-scripts
-cat << EOF > task-scripts/task_show_uname.sh
+cat > task-scripts/task_show_uname.sh <<<EOF
 #!/bin/sh
 
 uname -a
 EOF
-chmod +x task-scripts/ls.sh
+
+chmod +x task-scripts/task_show_uname.sh
 
 while ! curl -sI http://docker:8080 >/dev/null 2>&1; do echo "Waiting for concourse to be online"; sleep 5; done
 

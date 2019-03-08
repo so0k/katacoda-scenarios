@@ -4,7 +4,7 @@ The `task_hello_world.yml`{{open}} (click to open) configuration defines a task 
 
 When executed, you will see it downloading this `busybox` Docker image. It will only need to do download this base image once; though will recheck every time that the concourse worker running the task has the latest `busybox` image available prior to executing the task.
 
-As soon as our local concourse instance is online, run `task_hello_world.yml` directly from the command line with the following `fly` command:
+As soon as your local concourse instance is online, run `task_hello_world.yml` directly from the command line with the following `fly` command:
 
 ```
 fly -t tutorial execute -c task_hello_world.yml
