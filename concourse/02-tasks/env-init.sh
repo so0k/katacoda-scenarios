@@ -6,7 +6,10 @@ curl -Lo fly.tar.gz https://github.com/concourse/concourse/releases/download/v5.
 tar -xzf fly.tar.gz && rm fly.tar.gz
 mv fly /usr/local/bin
 
-# provision simple input dir for step 3
+# provision step 1 sample task
+curl -Lo task_hello_world.yml https://raw.githubusercontent.com/so0k/katacoda-scenarios/master/concourse/02-tasks/assets/task_hello_world.yml
+
+# provision simple input directory for step 3
 mkdir -p sample
 touch sample/{foo,bar}
 
