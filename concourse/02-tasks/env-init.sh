@@ -1,3 +1,7 @@
+echo "Updating curl"
+apt-get update
+apt-get install curl 
+
 echo "Standing up concourse playground"
 docker-compose up -d
 
