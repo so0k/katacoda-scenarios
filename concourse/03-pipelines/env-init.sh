@@ -1,12 +1,7 @@
 echo "Standing up concourse playground"
 
-# provision mock git remote
-mkdir -p /repositories/
-git clone --bare https://github.com/so0k/concourse-git-sample.git /repositories/git-sample.git
-git clone /repositories/git-sample.git ~/tutorial/git-sample
-
-# clone to docker host
-ssh root@host01 git clone --bare https://github.com/so0k/concourse-git-sample.git /repositories/git-sample.git
+# provision sample git remotes on docker host
+ssh root@host01 "mkdir /repositories && git clone --bare https://github.com/so0k/concourse-git-sample.git /repositories/git-sample.git"
 
 # bootstrap concourse workers with access to mock remote repository
 curl --connect-timeout 5 \
@@ -38,5 +33,8 @@ while ! curl -sI http://docker:8080 >/dev/null 2>&1; do echo "Waiting for concou
 
 echo "Configuring concourse client"
 fly -t tutorial login -c http://docker:8080 -u admin -p admin
+
+# clone sample git repositories to client
+git clone http://docker:9080/git-sample.git ~/tutorial/git-sample
 
 echo "Terminal ready to use!"
