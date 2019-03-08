@@ -99,3 +99,33 @@ jobs:
     params:
       repository: updated-git-sample
 </pre>
+
+Create a new pipeline
+
+```
+fly -t tutorial sp -p bump-date -c pipeline.yml
+```{{execute}}
+
+Trigger the job
+
+```
+fly -t tutorial tj -j bump-date/job-bump-date -w
+```{{execute}}
+
+Pull and review the changes made by concourse
+
+```
+cd git-sample
+```{{execute}}
+
+```
+git pull
+```{{execute}}
+
+```
+git log --pretty=format:"%h%x09%ad%x09%s by %an"
+```{{execute}}
+
+```
+git diff HEAD~1 HEAD
+```{{execute}}
