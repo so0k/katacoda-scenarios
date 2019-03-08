@@ -1,0 +1,35 @@
+{
+  "pathwayTitle": "Introduction to Concourse",
+  "title": "Pipeline basics",
+  "description": "In this scenario we will learn how to define and work with pipelines in concourse",
+  "difficulty": "Easy",
+  "time": "10min",
+  "details": {
+    "intro": {
+      "text": "00-intro.md",
+      "code": "env-init.sh",
+      "credits": "https://concoursetutorial.com/"
+    },
+    "steps": [
+      {
+        "title": "Working with Pipelines",
+        "text": "01-working-with-pipelines.md"
+      },
+      {
+        "title": "Configuring Tasks",
+        "text": "02-configuring-tasks.md"
+      }
+    ],
+    "finish": {
+      "text": "99-finish.md",
+      "credits": "https://concoursetutorial.com/"
+    }
+  },
+  "environment": {
+    "uilayout": "editor-terminal",
+    "uisettings": "yaml"
+  },
+  "backend": {
+    "imageid": "docker"
+  }
+}

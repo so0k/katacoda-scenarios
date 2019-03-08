@@ -14,9 +14,9 @@
       "description": "Understanding Tasks, Task inputs and Task Scripts"
     },
     {
-      "course_id": "03-pipeline-basics",
-      "title": "Understanding Pipeline basics",
-      "description": "Creating basic pipelines and work with Pipeline resources"
+      "course_id": "03-pipelines",
+      "title": "Working with Pipelines",
+      "description": "Understanding Pipelines, Jobs, Resources and Triggers"
     }
   ]
 }
