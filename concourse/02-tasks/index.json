@@ -6,22 +6,22 @@
   "time": "10min",
   "details": {
     "intro": {
-      "text": "intro.md",
+      "text": "00-intro.md",
       "code": "env-init.sh",
       "credits": "https://concoursetutorial.com/"
     },
     "steps": [
       {
         "title": "Running Tasks",
-        "text": "step1.md"
+        "text": "01-running-tasks.md"
       },
       {
         "title": "Configuring Tasks",
-        "text": "step2.md"
+        "text": "02-configuring-tasks.md"
       },
       {
         "title": "Task Inputs",
-        "text": "step3.md"
+        "text": "03-task-inputs.md"
       }
     ],
     "assets": {
@@ -31,7 +31,7 @@
         ]
     },
     "finish": {
-      "text": "finish.md",
+      "text": "99-finish.md",
       "credits": "https://concoursetutorial.com/"
     }
   },

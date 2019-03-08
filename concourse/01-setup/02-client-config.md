@@ -1,7 +1,7 @@
 The concourse client is designed to be explicit which server you work with and it requires that you specify the target API for every fly request. Define an alias for our test environment as follows:
 
 ```
-fly login -t tutorial -c http://127.0.0.1:8080
+fly login -t tutorial -c http://docker:8080
 ```{{execute terminal}}
 
 Once completed you may verify the contents of your local fly configuration

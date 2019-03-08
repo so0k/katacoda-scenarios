@@ -7,18 +7,17 @@
   "time": "10 minutes",
   "details": {
     "intro": {
-      "text": "intro.md",
+      "text": "00-intro.md",
       "credits": "https://concoursetutorial.com/"
     },
     "steps": [
       {
         "title": "Getting Started",
-        "code": "compose-up.sh",
-        "text": "step1.md"
+        "text": "01-getting-started.md"
       },
       {
         "title": "Client Config",
-        "text": "step2.md"
+        "text": "02-client-condfig.md"
       }
     ],
     "assets": {
@@ -27,7 +26,7 @@
         ]
     },
     "finish": {
-      "text": "finish.md",
+      "text": "99-finish.md",
       "credits": "https://concoursetutorial.com/"
     }
   },
