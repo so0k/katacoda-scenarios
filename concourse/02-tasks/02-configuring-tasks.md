@@ -1,4 +1,4 @@
-Create a new task configuration via the CLI: `touch task_ubuntu_ls.yml`{{execute terminal}}
+Create a new task configuration via the CLI: `touch task_ubuntu_ls.yml`{{execute}}
 
 Open the file: `task_ubuntu_ls.yml`{{open}}
 

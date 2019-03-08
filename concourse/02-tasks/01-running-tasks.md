@@ -2,7 +2,7 @@ A basic Hello World task has been created for you. To run tasks directly from th
 
 ```
 fly -t tutorial execute -c task_hello_world.yml
-```{{execute terminal}}
+```{{execute}}
 
 Every task in Concourse runs within a "container" (as best available on the target platform). The `task_hello_world.yml` configuration shows that we are running on a `linux` platform using the `busybox` container image. You will see it downloading a Docker image `busybox`. It will only need to do this once; though will recheck every time that it has the latest `busybox` image.
 

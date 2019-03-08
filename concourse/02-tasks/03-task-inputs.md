@@ -22,21 +22,21 @@ When inputs are defined by a task but not provided, the task will fail.
 
 ```
 fly -t tutorial e -c task_ubuntu_ls.yml
-```{{execute terminal}}
+```{{execute}}
 
 We will use the ability to provide input when executing a single task through the `-i` flag of the `execute` command.
 
 
 ```
 fly -t tutorial e -c task_ubuntu_ls.yml -i some-important-input=.
-```{{execute terminal}}
+```{{execute}}
 
 To pass in a different directory as an input, provide its absolute or relative path:
 
 
 ```
 fly -t tutorial e -c task_ubuntu_ls.yml -i some-important-input=..
-```{{execute terminal}}
+```{{execute}}
 
 The fly execute -i option can be removed if the current directory is the same name as the required input. For example, if we change the input name to match the parent directory name:
 
@@ -59,4 +59,4 @@ run:
 
 ```
 fly -t tutorial e -c task_ubuntu_ls.yml
-```{{execute terminal}}
+```{{execute}}

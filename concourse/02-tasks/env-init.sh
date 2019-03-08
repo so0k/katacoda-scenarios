@@ -1,6 +1,6 @@
 echo "Standing up concourse playground"
 curl -Lo docker-compose.yml https://raw.githubusercontent.com/so0k/katacoda-scenarios/master/concourse/02-tasks/assets/docker-compose.yml
-docker-compose up -d
+docker-compose up -d > concourse-up.log &
 
 curl -Lo fly.tar.gz https://github.com/concourse/concourse/releases/download/v5.0.0/fly-5.0.0-linux-amd64.tgz
 tar -xzf fly.tar.gz && rm fly.tar.gz
