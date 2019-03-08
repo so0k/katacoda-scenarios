@@ -2,15 +2,17 @@ Create a new task configuration via the CLI: `touch task_ubuntu_ls.yml`{{execute
 
 Open the file: `task_ubuntu_ls.yml`{{open}}
 
-First we need to specify the `platform` which is required and determines the pool of workers that the task can run against. The base deployment provides Linux workers. Traditionally other options are `windows` or `darwin` depending on your workers available.
+First we need to specify the `platform` which is required and determines the pool of workers the task can run against. The base deployment provides Linux workers. Traditionally other options are `windows` or `darwin` depending on your workers available.
 
 <pre class="file" data-filename="task_ubuntu_ls.yml" data-target="replace">---
 platform: linux
 </pre>
 
-Next we define the base image for the containerized workspace the task will run in. This is done through the `image_resource` configuration. Defining the base image allows your task to have any prepared dependencies that it needs to run. Instead of installing dependencies each time while running a task you might choose to pre-bake them into an image to make your tasks run faster.
+Next we define the base image for the containerized workspace the task will run in. This is done through the `image_resource` configuration. 
 
-Only `type` and `source` are required for the `image_resource` configuration field. Concourse has very [basic requirements](https://concourse-ci.org/tasks.html#task-image-resource) for the type implementing the base image resource interface, but the reference implementation is the [`docker-image`](https://github.com/concourse/docker-image-resource) type. A future scenario will look into building and using your own Docker images.
+Defining the base image allows your task to have any prepared dependencies that it needs to run pre-baked instead of installing dependencies each time running a task, thus making your tasks run faster.
+
+The `image_resource` configuration field only requires `type` and `source` fields. As for the underlying system preparing the task execution environment, concourse has very [basic requirements](https://concourse-ci.org/tasks.html#task-image-resource) and the reference implementation is the [`docker-image`](https://github.com/concourse/docker-image-resource).
 
 <pre class="file" data-filename="task_ubuntu_ls.yml" data-target="append">
 image_resource:
@@ -18,11 +20,9 @@ image_resource:
   source:
 </pre>
 
-For the `docker-image` resource only the `repository` is required, the `tag` is optional and is `latest` by default.
+The `docker-image` resource type only the `repository` is required, the `tag` is optional and is `latest` by default. A future scenario will look into building and using your own Docker images. For this exercise we will use the `ubuntu` docker image readily available from the [Docker Hub](https://hub.docker.com/_/ubuntu):
 
-<pre class="file" data-filename="task_ubuntu_ls.yml" data-target="append">
-    repository: ubuntu
-</pre>
+<pre class="file" data-filename="task_ubuntu_ls.yml" data-target="append">    repository: ubuntu</pre>
 
 Finally we define the command to execute in the container using the `run` configuration. Only `path` is required (commonly a script or command) a string array of arguments is optionally provided through `args`.
 

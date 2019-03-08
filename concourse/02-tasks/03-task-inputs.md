@@ -1,6 +1,6 @@
 Concourse supports `inputs` to pass files/folders for processing into tasks. 
 
-These `inputs` allow you to fetch artifacts at the start of a build pipeline or pass artifacts between tasks in a pipeline. Passing artifacts between pipeline steps will be covered during the pipelines scenario, right now we focus on how tasks themselves work with `inputs`.
+This allows you to fetch artifacts at the start of a build pipeline or pass artifacts between tasks in a pipeline. Passing artifacts between pipeline steps will be covered during the pipelines scenario, right now we focus on how tasks themselves work with `inputs`.
 
 Let's add an input configuration to our `task_ubuntu_ls.yml`{{open}} task.
 
