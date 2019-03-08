@@ -14,6 +14,10 @@
       {
         "title": "Working with Pipelines",
         "text": "01-working-with-pipelines.md"
+      },
+      {
+        "title": "Pipeline Resources",
+        "text": "01-pipeline-resources.md"
       }
     ],
     "finish": {

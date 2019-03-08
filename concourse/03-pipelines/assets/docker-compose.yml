@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  git:
+  git-server:
     image: quay.io/swo0k/git-http-backend:v0.0.1
     ports: ["9080:8080"]
     volumes:
