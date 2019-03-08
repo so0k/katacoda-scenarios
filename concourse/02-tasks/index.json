@@ -27,7 +27,7 @@
     "assets": {
         "client": [
             {"file": "docker-compose.yml", "target": "~/tutorial/"},
-            {"file": "task_hello_world.yml", "target": "~/tutorial/hello-world/"}
+            {"file": "task_hello_world.yml", "target": "~/tutorial/"}
         ]
     },
     "finish": {

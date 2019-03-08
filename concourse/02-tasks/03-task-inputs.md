@@ -2,7 +2,7 @@ Concourse supports `inputs` into tasks to pass in files/folders for processing. 
 
 Let's add an input configuration. for each input the `name` and will determine the `path` relative to the working directory of the task (unless explicitly set). By default `optional` is `false`.
 
-<pre class="file" data-filename="hello-world/task_ubuntu_ls.yml" data-target="replace">---
+<pre class="file" data-filename="task_ubuntu_ls.yml" data-target="replace">---
 platform: linux
 
 image_resource:
@@ -40,7 +40,7 @@ fly -t tutorial e -c task_ubuntu_ls.yml -i some-important-input=..
 
 The fly execute -i option can be removed if the current directory is the same name as the required input. For example, if we change the input name to match the parent directory name:
 
-<pre class="file" data-filename="hello-world/task_ubuntu_ls.yml" data-target="replace">---
+<pre class="file" data-filename="task_ubuntu_ls.yml" data-target="replace">---
 platform: linux
 
 image_resource:
@@ -49,7 +49,7 @@ image_resource:
     repository: ubuntu
 
 inputs:
-- name: hello-world
+- name: tutorial
 
 run:
   path: ls

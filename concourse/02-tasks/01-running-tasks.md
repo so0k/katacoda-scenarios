@@ -1,7 +1,6 @@
 A basic Hello World task has been created for you. To run tasks directly from the command line use the following command:
 
 ```
-cd hello-world
 fly -t tutorial execute -c task_hello_world.yml
 ```{{execute terminal}}
 
@@ -9,6 +8,6 @@ Every task in Concourse runs within a "container" (as best available on the targ
 
 Within this container it will run the command `echo hello world`.
 
-You may see the task status via [http://<localhost>/builds/1](https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/builds/1)
+You may see the task status via [http://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/builds/1](https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/builds/1)
 
 We will dive deeper into the configuration of a task in the next step

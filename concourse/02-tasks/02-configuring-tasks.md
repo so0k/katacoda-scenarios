@@ -1,10 +1,10 @@
 Create a new task configuration via the CLI: `touch task_ubuntu_ls.yml`{{execute terminal}}
 
-Open the file: `hello-world/task_ubuntu_ls.yml`{{open}}
+Open the file: `task_ubuntu_ls.yml`{{open}}
 
 First we need to specify the `platform` which is required and determines the pool of workers that the task can run against. The base deployment provides Linux workers. Traditionally other options are `windows` or `darwin` depending on your workers available.
 
-<pre class="file" data-filename="hello-world/task_ubuntu_ls.yml" data-target="replace">---
+<pre class="file" data-filename="task_ubuntu_ls.yml" data-target="replace">---
 platform: linux
 </pre>
 
@@ -14,7 +14,7 @@ Only `type` and `source` are required. Concourse has very [basic requirements](h
 
 For the `docker-image` resource only the `repository` is required, the `tag` is optional and is `latest` by default.
 
-<pre class="file" data-filename="hello-world/task_ubuntu_ls.yml" data-target="append">
+<pre class="file" data-filename="task_ubuntu_ls.yml" data-target="append">
 image_resource:
   type: docker-image
   source:
@@ -23,7 +23,7 @@ image_resource:
 
 Finally we define the command to execute in the container using the `run` configuration. Only `path` is required (commonly a script or command) a string array of arguments is optionally provided through `args`.
 
-<pre class="file" data-filename="hello-world/task_ubuntu_ls.yml" data-target="append">
+<pre class="file" data-filename="task_ubuntu_ls.yml" data-target="append">
 run:
   path: ls
   args:
