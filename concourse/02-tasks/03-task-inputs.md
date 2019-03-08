@@ -1,4 +1,4 @@
-Concourse supports `inputs` into tasks to pass in files/folders for processing. This allows you to fetch artifacts at the start of a build pipeline or pass artifacts between tasks in a pipeline. We will cover this when looking into pipelines.
+Concourse supports `inputs` into tasks to pass in files/folders for processing. This allows you to fetch artifacts at the start of a build pipeline or pass artifacts between tasks in a pipeline. Passing artifacts between pipeline steps will be covered during the pipelines scenario, this step covers how tasks themselves work with inputs.
 
 Let's add an input configuration. for each input the `name` and will determine the `path` relative to the working directory of the task (unless explicitly set). By default `optional` is `false`.
 
@@ -18,24 +18,24 @@ run:
   args: ['-alR']
 </pre>
 
-When inputs are defined by a task but not provided, the task will fail.
+When inputs are defined by a task and not flagged as option, yet not provided, the task will fail.
 
 ```
 fly -t tutorial e -c task_ubuntu_ls.yml
 ```{{execute}}
 
-We will use the ability to provide input when executing a single task through the `-i` flag of the `execute` command.
+As expected, we see `error: missing required input ``some-important-input```
 
+When executing a single task through the `execute` command, we will provide input through the `-i` flag:
 
 ```
 fly -t tutorial e -c task_ubuntu_ls.yml -i some-important-input=.
 ```{{execute}}
 
-To pass in a different directory as an input, provide its absolute or relative path:
-
+To pass in a different directory as input, provide its absolute or relative path:
 
 ```
-fly -t tutorial e -c task_ubuntu_ls.yml -i some-important-input=..
+fly -t tutorial e -c task_ubuntu_ls.yml -i some-important-input=sample
 ```{{execute}}
 
 The fly execute -i option can be removed if the current directory is the same name as the required input. For example, if we change the input name to match the parent directory name:

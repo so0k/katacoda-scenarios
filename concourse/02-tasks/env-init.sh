@@ -6,6 +6,10 @@ curl -Lo fly.tar.gz https://github.com/concourse/concourse/releases/download/v5.
 tar -xzf fly.tar.gz && rm fly.tar.gz
 mv fly /usr/local/bin
 
+# provision simple input dir for step 3
+mkdir -p sample
+touch sample/{foo,bar}
+
 while ! curl -sI http://docker:8080 >/dev/null 2>&1; do echo "Waiting for concourse to be online"; sleep 5; done
 
 echo "Configuring concourse client"

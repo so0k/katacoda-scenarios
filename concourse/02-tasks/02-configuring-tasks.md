@@ -8,7 +8,7 @@ First we need to specify the `platform` which is required and determines the poo
 platform: linux
 </pre>
 
-Next we define the base image for the containerized workspace the task will be ran in with the `image_resource` configuration. this allows your task to have any prepared dependencies that it needs to run. Instead of installing dependencies each time during a task you might choose to pre-bake them into an image to make your tasks much faster.
+Next we define the base image for the containerized workspace the task will run in. This is done through the `image_resource` configuration. Defining the base image allows your task to have any prepared dependencies that it needs to run. Instead of installing dependencies each time while running a task you might choose to pre-bake them into an image to make your tasks run faster.
 
 Only `type` and `source` are required. Concourse has very [basic requirements](https://concourse-ci.org/tasks.html#task-image-resource) on what such a base image resource should look like, but the reference implementation is the [Docker image resource](https://github.com/concourse/docker-image-resource) type. A future scenario will look into building and using your own Docker images.
 
@@ -34,6 +34,6 @@ Run this task as follows:
 
 ```
 fly -t tutorial e -c task_ubuntu_ls.yml
-```{{execute terminal}}
+```{{execute}}
 
 Note: `e` is the alias for `execute`
