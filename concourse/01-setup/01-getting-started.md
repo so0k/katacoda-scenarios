@@ -21,6 +21,21 @@ Next, stand up both Postgres and Concourse in quickstart mode with:
 docker-compose up -d
 ```{{execute}}
 
+Wait for compose to pull the docker images and stand up the database as well as the concourse UI / scheduler and workers.
+
+```
+...
+Status: Downloaded newer image for postgres:latest
+Pulling concourse (concourse/concourse:5.0.0)...
+5.0.0: Pulling from concourse/concourse
+6cf436f81810: Pull complete
+987088a85b96: Pull complete
+b4624b3efe06: Extracting [==================================================>]     516B/516B
+d42beb8ded59: Download complete
+f51b97ce0afa: Download complete
+b2b35a4bcc62: Downloading [==========>                                        ]  115.5MB/532.4MB
+```{{terminal}}
+
 After a while (may take up to 5 minutes), you should see the concourse dashboard appear in the upper frame.
 
 In the mean time let's download the command line client:

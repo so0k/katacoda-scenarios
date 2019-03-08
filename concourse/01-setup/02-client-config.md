@@ -4,7 +4,11 @@ The concourse client is designed to be explicit which server you work with and i
 fly login -t tutorial -c https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com
 ```{{execute}}
 
-This will prompt you to log in using the web console, use `admin`{{copy}} as both username and password. Once logged in, an attempt is made to send the authentication token back to the fly CLI, however this fails given the constraints of the katacoda environment. Use the `copy token to clipboard` button and close the window to past the token manually into the terminal.
+This will prompt you to log in using the web console, use `admin`{{copy}} as both username and password.
+
+Click the link displayed in the terminal to open a new window for log in.
+
+Once logged in, an attempt is made to send the authentication token back to the fly CLI, however this fails given the constraints of the katacoda environment. Use the `copy token to clipboard` button and close the window to past the token manually into the terminal.
 
 Once completed you may verify the contents of your local fly configuration
 
