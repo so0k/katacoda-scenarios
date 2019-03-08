@@ -1,0 +1,41 @@
+{
+  "pathwayTitle": "Introduction to Concourse",
+  "title": "Client and Course Setup",
+  "description": "In this scenario we will learn how the concourse course is set up and how to configure our concourse client",
+  "difficulty": "beginner",
+  "icon": "fa-katacoda",
+  "time": "10 minutes",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "credits": "https://concoursetutorial.com/"
+    },
+    "steps": [
+      {
+        "title": "Getting Started",
+        "code": "compose-up.sh",
+        "text": "step1.md"
+      },
+      {
+        "title": "Client Config",
+        "text": "step2.md"
+      }
+    ],
+    "assets": {
+        "host01": [
+            {"file": "docker-compose.yml", "target": "~/"}
+        ]
+    },
+    "finish": {
+      "text": "finish.md",
+      "credits": "https://concoursetutorial.com/"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal-iframe-split"
+  },
+  "backend": {
+    "imageid": "docker",
+    "port": 8080
+  }
+}

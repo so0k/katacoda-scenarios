@@ -1,0 +1,48 @@
+{
+  "pathwayTitle": "Introduction to Concourse",
+  "title": "Understanding Tasks",
+  "description": "In this scenario we will learn the concept of tasks within concourse",
+  "difficulty": "Easy",
+  "time": "10min",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "code": "env-init.sh",
+      "credits": "https://concoursetutorial.com/"
+    },
+    "steps": [
+      {
+        "title": "Running Tasks",
+        "text": "step1.md"
+      },
+      {
+        "title": "Configuring Tasks",
+        "text": "step2.md"
+      },
+      {
+        "title": "Task Inputs",
+        "text": "step3.md"
+      }
+    ],
+    "assets": {
+        "host01": [
+            {"file": "docker-compose.yml", "target": "~/"},
+            {"file": "task_hello_world.yml", "target": "~/hello-world/"}
+        ]
+    },
+    "finish": {
+      "text": "finish.md",
+      "credits": "https://concoursetutorial.com/"
+    }
+  },
+  "files": [
+      "~/task-hello-world/task_hello_world.yml"
+  ],
+  "environment": {
+    "uilayout": "editor-terminal",
+    "uisettings": "yaml"
+  },
+  "backend": {
+    "imageid": "docker"
+  }
+}

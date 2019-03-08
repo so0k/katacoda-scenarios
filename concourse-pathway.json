@@ -1,0 +1,23 @@
+{
+  "title": "Introduction to Concourse",
+  "description": "Katacoda version of https://concoursetutorial.com/",
+  "icon": "fa-katacoda",
+  "courses": [
+    {
+      "course_id": "concourse-course-setup",
+      "title": "Client and Course Setup",
+      "description": "Understand the set up of the course and concourse clients"
+    },
+    {
+      "course_id": "concourse-tasks",
+      "title": "Understanding Tasks",
+      "description": "Understanding Tasks, Task inputs and Task Scripts"
+    },
+    {
+      "course_id": "concourse-pipeline-basics",
+      "title": "Understanding Pipeline basics",
+      "description": "Creating basic pipelines and work with Pipeline resources"
+    }
+  ]
+}
+
