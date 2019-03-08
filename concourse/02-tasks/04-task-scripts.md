@@ -22,7 +22,7 @@ inputs:
 
 Add the following `run:` configuration:
 
-<pre class="file" data-filename="task_show_uname.yml" data-target="replace">
+<pre class="file" data-filename="task_show_uname.yml" data-target="append">
 run:
   path: ./task-scripts/task_show_uname.sh
 </pre>
