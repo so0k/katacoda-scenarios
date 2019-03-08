@@ -16,7 +16,6 @@ touch sample/{foo,bar}
 while ! curl -sI http://docker:8080 >/dev/null 2>&1; do echo "Waiting for concourse to be online"; sleep 5; done
 
 echo "Configuring concourse client"
-set -x
 fly -t tutorial login -c http://docker:8080 -u admin -p admin
 
-set +x
+echo "\e[1m\e[32mTerminal ready to use!\e[0m"

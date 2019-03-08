@@ -10,14 +10,17 @@ platform: linux
 
 Next we define the base image for the containerized workspace the task will run in. This is done through the `image_resource` configuration. Defining the base image allows your task to have any prepared dependencies that it needs to run. Instead of installing dependencies each time while running a task you might choose to pre-bake them into an image to make your tasks run faster.
 
-Only `type` and `source` are required. Concourse has very [basic requirements](https://concourse-ci.org/tasks.html#task-image-resource) on what such a base image resource should look like, but the reference implementation is the [Docker image resource](https://github.com/concourse/docker-image-resource) type. A future scenario will look into building and using your own Docker images.
-
-For the `docker-image` resource only the `repository` is required, the `tag` is optional and is `latest` by default.
+Only `type` and `source` are required for the `image_resource` configuration field. Concourse has very [basic requirements](https://concourse-ci.org/tasks.html#task-image-resource) for the type implementing the base image resource interface, but the reference implementation is the [`docker-image`](https://github.com/concourse/docker-image-resource) type. A future scenario will look into building and using your own Docker images.
 
 <pre class="file" data-filename="task_ubuntu_ls.yml" data-target="append">
 image_resource:
   type: docker-image
   source:
+</pre>
+
+For the `docker-image` resource only the `repository` is required, the `tag` is optional and is `latest` by default.
+
+<pre class="file" data-filename="task_ubuntu_ls.yml" data-target="append">
     repository: ubuntu
 </pre>
 

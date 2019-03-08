@@ -1,6 +1,10 @@
-Concourse supports `inputs` into tasks to pass in files/folders for processing. This allows you to fetch artifacts at the start of a build pipeline or pass artifacts between tasks in a pipeline. Passing artifacts between pipeline steps will be covered during the pipelines scenario, this step covers how tasks themselves work with inputs.
+Concourse supports `inputs` to pass files/folders for processing into tasks. 
 
-Let's add an input configuration. for each input the `name` and will determine the `path` relative to the working directory of the task (unless explicitly set). By default `optional` is `false`.
+These `inputs` allow you to fetch artifacts at the start of a build pipeline or pass artifacts between tasks in a pipeline. Passing artifacts between pipeline steps will be covered during the pipelines scenario, right now we focus on how tasks themselves work with `inputs`.
+
+Let's add an input configuration to our `task_ubuntu_ls.yml`{{open}} task.
+
+For each input the `name` is required and determines the `path` artifacts are stored relative to the working directory of the task (you may override the `name` by setting `path` explicitly in the input configuration). By default an input is set `false` for `optional` and thus required.
 
 <pre class="file" data-filename="task_ubuntu_ls.yml" data-target="replace">---
 platform: linux
@@ -18,13 +22,17 @@ run:
   args: ['-alR']
 </pre>
 
-When inputs are defined by a task and not flagged as option, yet not provided, the task will fail.
+When inputs are defined by a task, not flagged as optional but not provided, the task will fail (as is the case here):
 
 ```
 fly -t tutorial e -c task_ubuntu_ls.yml
 ```{{execute}}
 
-As expected, we see `error: missing required input ``some-important-input```
+We should see:
+
+```
+error: missing required input `some-important-input`
+```
 
 When executing a single task through the `execute` command, we will provide input through the `-i` flag:
 
@@ -32,7 +40,7 @@ When executing a single task through the `execute` command, we will provide inpu
 fly -t tutorial e -c task_ubuntu_ls.yml -i some-important-input=.
 ```{{execute}}
 
-To pass in a different directory as input, provide its absolute or relative path:
+To pass in a different directory as input, provide its absolute or relative path, for example:
 
 ```
 fly -t tutorial e -c task_ubuntu_ls.yml -i some-important-input=sample
@@ -56,6 +64,7 @@ run:
   args: ['-alR']
 </pre>
 
+The task will have all files within its parent directory available during execution:
 
 ```
 fly -t tutorial e -c task_ubuntu_ls.yml
