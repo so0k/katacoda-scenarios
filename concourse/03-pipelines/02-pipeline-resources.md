@@ -66,7 +66,13 @@ apply configuration? [yN]:
 
 Press `y`
 
-Test the pipeline by triggering the job and watching the output
+Force a resource check (alias `cr`) for the git resource:
+
+```
+fly -t tutorial cr -r hello-world/resource-git-sample
+```{{execute}}
+
+And test the pipeline by triggering the job and watching the output
 
 ```
 fly -t tutorial tj -j hello-world/job-hello-world -w
