@@ -43,7 +43,7 @@ fly -t tutorial e -c task_ubuntu_ls.yml -i some-important-input=.
 To pass in a different directory as input, provide its absolute or relative path, for example:
 
 ```
-fly -t tutorial e -c task_ubuntu_ls.yml -i some-important-input=sample
+fly -t tutorial e -c task_ubuntu_ls.yml -i some-important-input=task-scripts
 ```{{execute}}
 
 The fly execute -i option can be removed if the current directory is the same name as the required input. For example, if we change the input name to match the parent directory name:

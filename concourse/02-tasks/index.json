@@ -22,6 +22,10 @@
       {
         "title": "Task Inputs",
         "text": "03-task-inputs.md"
+      },
+      {
+        "title": "Task Scripts",
+        "text": "04-task-scripts.md"
       }
     ],
     "finish": {

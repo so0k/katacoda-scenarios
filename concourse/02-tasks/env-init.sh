@@ -10,8 +10,13 @@ mv fly /usr/local/bin
 curl -Lo task_hello_world.yml https://raw.githubusercontent.com/so0k/katacoda-scenarios/master/concourse/02-tasks/assets/task_hello_world.yml
 
 # provision simple input directory for step 3
-mkdir -p sample
-touch sample/{foo,bar}
+mkdir -p task-scripts
+cat << EOF > task-scripts/task_show_uname.sh
+#!/bin/sh
+
+uname -a
+EOF
+chmod +x task-scripts/ls.sh
 
 while ! curl -sI http://docker:8080 >/dev/null 2>&1; do echo "Waiting for concourse to be online"; sleep 5; done
 
