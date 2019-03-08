@@ -6,15 +6,29 @@ git clone --bare https://github.com/so0k/concourse-git-sample.git /mock/remote/g
 git clone /mock/remote/git-sample ~/tutorial/git-sample
 
 # bootstrap concourse workers with access to mock remote repository
-curl -Lo docker-compose.yml https://raw.githubusercontent.com/so0k/katacoda-scenarios/master/concourse/03-pipelines/assets/docker-compose.yml
+curl --connect-timeout 5 \
+  --max-time 10 \
+  --retry 5 \
+  --retry-delay 0 \
+  --retry-max-time 40 \
+  -Lo docker-compose.yml https://raw.githubusercontent.com/so0k/katacoda-scenarios/master/concourse/03-pipelines/assets/docker-compose.yml
 docker-compose up -d > .concourse-up.log &
 
-curl -Lo fly.tar.gz https://github.com/concourse/concourse/releases/download/v5.0.0/fly-5.0.0-linux-amd64.tgz
+curl --connect-timeout 5 \
+  --max-time 10 \
+  --retry 5 \
+  --retry-delay 0 \
+  --retry-max-time 40 \
+  -Lo fly.tar.gz https://github.com/concourse/concourse/releases/download/v5.0.0/fly-5.0.0-linux-amd64.tgz
 tar -xzf fly.tar.gz && rm fly.tar.gz
 mv fly /usr/local/bin
 
-
-curl -Lo pipeline.yml https://raw.githubusercontent.com/so0k/katacoda-scenarios/master/concourse/03-pipelines/assets/pipeline.yml
+curl --connect-timeout 5 \
+  --max-time 10 \
+  --retry 5 \
+  --retry-delay 0 \
+  --retry-max-time 40 \
+  -Lo pipeline.yml https://raw.githubusercontent.com/so0k/katacoda-scenarios/master/concourse/03-pipelines/assets/pipeline.yml
 
 # provision simple input directory for step 3
 mkdir -p task-scripts
