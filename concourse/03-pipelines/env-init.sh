@@ -5,6 +5,9 @@ mkdir -p /repositories/
 git clone --bare https://github.com/so0k/concourse-git-sample.git /repositories/git-sample.git
 git clone /repositories/git-sample.git ~/tutorial/git-sample
 
+# clone to docker host
+ssh root@host01 git clone --bare https://github.com/so0k/concourse-git-sample.git /repositories/git-sample.git
+
 # bootstrap concourse workers with access to mock remote repository
 curl --connect-timeout 5 \
   --max-time 10 \
