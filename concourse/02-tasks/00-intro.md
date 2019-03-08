@@ -1,4 +1,4 @@
-The central concept of any CI/CD system is to run tasks, which are the focus of this scenario. We will break down the configuration of tasks.
+The central concept of any CI/CD system is to run tasks, which are the focus of this scenario where we will break down the configuration of tasks.
 
 Concourse provides an easy way to run tasks directly from the command line. This helps you ensure tasks run as expected in your target build environment.
 

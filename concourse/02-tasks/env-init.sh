@@ -22,11 +22,10 @@ curl --connect-timeout 5 \
 
 # provision simple input directory for step 3
 mkdir -p task-scripts
-cat > task-scripts/task_show_uname.sh <<<EOF
+cat > task-scripts/task_show_uname.sh <<<"
 #!/bin/sh
 
-uname -a
-EOF
+uname -a"
 
 chmod +x task-scripts/task_show_uname.sh
 
