@@ -17,7 +17,20 @@
       },
       {
         "title": "Pipeline Resources",
-        "text": "02-pipeline-resources.md"
+        "text": "02-pipeline-resources.md",
+        "answer": "02-pipeline-resources-answer.md"
+      },
+      {
+        "title": "Pipeline Outputs",
+        "text": "03-pipeline-outputs.md"
+      },
+      {
+        "title": "Job Triggers",
+        "text": "04-job-triggers.md"
+      },
+      {
+        "title": "Pipeline Jobs",
+        "text": "05-passing-resources.md"
       }
     ],
     "finish": {
