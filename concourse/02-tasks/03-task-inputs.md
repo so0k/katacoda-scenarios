@@ -10,7 +10,7 @@ For each input the `name` is required and determines the `path` artifacts are st
 platform: linux
 
 image_resource:
-  type: docker-image
+  type: registry-image
   source:
     repository: ubuntu
 
@@ -52,7 +52,7 @@ The fly execute -i option can be removed if the current directory is the same na
 platform: linux
 
 image_resource:
-  type: docker-image
+  type: registry-image
   source:
     repository: ubuntu
 

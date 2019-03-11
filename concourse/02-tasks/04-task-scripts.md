@@ -12,7 +12,7 @@ And add the following:
 platform: linux
 
 image_resource:
-  type: docker-image
+  type: registry-image
   source:
     repository: ubuntu
 
