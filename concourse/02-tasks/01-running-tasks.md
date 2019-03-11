@@ -18,4 +18,16 @@ Notice that consecutive runs of the task configurations using the same `busybox`
 fly -t tutorial execute -c task_hello_world.yml
 ```{{execute}}
 
-We will dive deeper into the configuration of a task in next.
+Review the execution of these one-off task using the `builds` (alias `bs`) command:
+
+```
+fly -t tutorial bs
+```{{execute}}
+
+Fetch the output of a particular build using the `watch` (alias `w`) command:
+
+```
+fly -t tutorial w -j 1
+```{{execute}}
+
+We will dive deeper into the configuration of a task next.

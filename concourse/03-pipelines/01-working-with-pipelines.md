@@ -2,7 +2,7 @@ Pipelines are configured entirely via the fly CLI. There is no GUI.
 
 Let's see how to upload a pipeline, run it and watch its execution all through the command line.
 
-The provided `pipeline.yml`{{open}} (click to open) configuration defines a basic pipepline using the hello world task as covered in the scenario covering tasks.
+The provided `pipeline.yml`{{open}} (click to open) configuration defines a basic pipepline using the hello world task as covered in "Task Basics" scenario of this course.
 
 This first pipeline is unimpressive - a single job `job-hello-world` with no inputs from the left and no outputs to its right, no jobs feeding into it, nor jobs feeding from it and no triggers to kick off the job. It is the most basic pipeline.
 

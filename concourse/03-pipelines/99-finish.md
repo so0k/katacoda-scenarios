@@ -1,3 +1,3 @@
-In this scenario we've learned the core configuration of tasks in Concourse as well as how to run individual tasks from our command line client.
+In this scenario we've learned how to work with pipelines.
 
-Next we will learn how to define pipelines to run multiple tasks.
+Next we will learn how to define pipeline parameters and how to work with credential managers.
