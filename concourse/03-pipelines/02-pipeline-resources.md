@@ -78,4 +78,6 @@ And test the pipeline by triggering the job and watching the output
 fly -t tutorial tj -j hello-world/job-hello-world -w
 ```{{execute}}
 
-**Note**: Did the resource-git-sample show up in the task directory listing? If not, can you think of a reason why and the way to fix it?
+**Question: Did the `resource-git-sample` show up in the task directory listing?**
+
+If not, can you think of a reason why and the way to fix it?

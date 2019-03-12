@@ -27,7 +27,7 @@ fly -t tutorial bs
 Fetch the output of a particular build using the `watch` (alias `w`) command:
 
 ```
-fly -t tutorial w -j 1
+fly -t tutorial w -b 1
 ```{{execute}}
 
 We will dive deeper into the configuration of a task next.

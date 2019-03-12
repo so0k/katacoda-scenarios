@@ -12,7 +12,7 @@ Next we define the base image for the containerized workspace the task will run 
 
 Defining the base image allows your task to have any prepared dependencies that it needs to run pre-baked instead of installing dependencies each time running a task, thus making your tasks run faster.
 
-The `image_resource` configuration field only requires `type` and `source` fields. As for the underlying system preparing the task execution environment, concourse has very [basic requirements](https://concourse-ci.org/tasks.html#task-image-resource) and the reference implementation is the [`registry-image](https://github.com/concourse/registry-image-resource) (a newer version of [`docker-image`](https://github.com/concourse/docker-image-resource)).
+The `image_resource` configuration field only requires `type` and `source` fields. As for the underlying system preparing the task execution environment, concourse has very [basic requirements](https://concourse-ci.org/tasks.html#task-image-resource) and the reference implementation is the [`registry-image`](https://github.com/concourse/registry-image-resource) (a newer version of [`docker-image`](https://github.com/concourse/docker-image-resource)).
 
 <pre class="file" data-filename="task_ubuntu_ls.yml" data-target="append">
 image_resource:
