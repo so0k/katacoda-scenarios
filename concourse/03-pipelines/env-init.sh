@@ -1,5 +1,7 @@
 echo "Standing up concourse playground"
 
+echo "[[HOST_SUBDOMAIN]]-8500-[[KATACODA_HOST]].environments.katacoda.com" > test
+
 # bootstrap concourse workers with access to mock remote repository
 curl --connect-timeout 5 \
   --max-time 10 \
