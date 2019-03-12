@@ -12,7 +12,7 @@ resources:
     uri: http://git-server:8080/git-sample.git
     branch: master
 - name: 2m
-  type: timer
+  type: time
   source:
     interval: 2m
 
@@ -32,7 +32,7 @@ jobs:
 
 Add a second job `job-show-date` which will run whenever the first job successfully completes:
 
-<pre data-filename="pipeline_output_git.yml" data-target="append">
+<pre class="file" data-filename="pipeline_output_git.yml" data-target="append">
 - name: job-show-date
   plan:
   - get: resource-git-sample
@@ -63,7 +63,7 @@ And trigger the job with the `-w` flag to watch its progress:
 fly -t tutorial tj -j bump-date/job-bump-date -w
 ```{{execute}}
 
-The latest `resource-git-sample` commit fetched down in `job-show-date` will be the exact commit used in the last successful `job-bump-date` job. If you manually created and pusehd a new git commit in the `git-sample` repository and manually ran the `job-show-date` job it would continue to use the previous commit it used, and ignore your new commit. This is the power of pipelines.
+The latest `resource-git-sample` commit fetched down in `job-show-date` will be the exact commit used in the last successful `job-bump-date` job. If you manually created and pushed a new git commit in the `git-sample` repository and manually ran the `job-show-date` job it would continue to use the previous commit it used, and ignore your new commit. This is the power of pipelines.
 
 ## Cleaning up
 

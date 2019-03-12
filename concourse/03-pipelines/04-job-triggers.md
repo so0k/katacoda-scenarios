@@ -2,11 +2,11 @@ So far we have mainly triggered jobs manually through the `fly trigger-job` comm
 
 Other options are:
 
-- Use the Concourse Web UI: click the `+` button on a job
+- Use the Concourse Web UI: click the `+` button on a job (we didn't do this as we're using the command line only in this tutorial)
 - Sending `POST` request to Concourse API
 - Trigger jobs using resources
 
-The primary way that Concourse jobs will be triggered to run will be by resources changing. A `git` repo has a new commit? Run a job to test it. A GitHub project cuts a new release? Run a job to pull down its attached files and do something with them.
+The primary way that Concourse jobs will be triggered to run is through resources changing. A `git` repo has a new commit? Run a job to test it. A GitHub project cuts a new release? Run a job to pull down its attached files and do something with them.
 
 As mentioned in Step 4 of this scenario, triggering is controlled by the steps in the build plan. A `get` step may use its resource `check` method to trigger depending jobs.
 
@@ -14,7 +14,7 @@ The [`time resource`](https://github.com/concourse/time-resource) comes with Con
 
 Open the file: `pipeline_output_git.yml`{{open}}
 
-Add the `timer` resource named `2m` with an `interval` of 2 minutes and use it in a triggering `get` step:
+Add the `time` resource named `2m` with an `interval` of 2 minutes and use it in a triggering `get` step:
 
 <pre class="file" data-filename="pipeline_output_git.yml" data-target="replace">
 resources:
@@ -24,7 +24,7 @@ resources:
     uri: http://git-server:8080/git-sample.git
     branch: master
 - name: 2m
-  type: timer
+  type: time
   source:
     interval: 2m
 
@@ -51,13 +51,14 @@ fly -t tutorial sp -p bump-date -c pipeline_output_git.yml
 You may watch the builds to see the bump-date pipeline run every 2 minutes
 
 ```
-watch fly -t tuturial bs -p bump-date
+watch fly -t tutorial bs -p bump-date
 ```{{execute}}
 
 **Note**: Press `CTRL`+`C` to stop the watch
 
 Why does `time` resource configured with `interval: 2m` trigger "approximately" every 2 minutes?
 
-> "resources are checked every minute, but there's a shorter (10sec) interval for determining when a build should run; time resource is to just ensure a build runs on some rough periodicity; we use it to e.g. continuously run integration/acceptance tests to weed out flakiness" - alex
+> resources are checked every minute, but there's a shorter (10sec) interval for determining when a build should run; time resource is to just ensure a build runs on some rough periodicity; we use it to e.g. continuously run integration/acceptance tests to weed out flakiness
+* - alex*
 
 The net result is that a timer of `2m` will trigger every 2 to 3 minutes.
